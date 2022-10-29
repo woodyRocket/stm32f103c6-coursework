@@ -104,6 +104,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	LED_Alternating();
 }
 ```
+Full source code can be found [here](./src/ex2/Core)
+
 ### Exercise 3 
 ***Schematic*** 
 
@@ -118,8 +120,41 @@ Same source code as exercise 2
 ![Image](./images/lab1_ex4/lab1_ex4-1.png "Exercise 1 schematic")
 ***Source code***
 
-7_segment.c
+software_timer.h
+```c
+#define TIMER_DELAY   1000
+#define TIMER_INTERRUPT   10
+```
 
+software_timer.c
+```c
+int timerCounter = 0;
+int timerFlag = 0;
+
+void Set_Timer(void){
+	timerCounter = TIMER_DELAY/TIMER_INTERRUPT;
+	timerFlag 	 = 0;
+}
+
+void Timer_Run(void){
+	if(timerCounter > 0){
+		timerCounter--;
+		if(timerCounter <= 0){
+			timerFlag = 1;
+		}
+	}
+}
+```
+
+gpio.c
+```c
+void Data_Out(GPIO_TypeDef* Port, uint16_t Pin, GPIO_PinState state){
+	if (state < 0 || state > 1) return;
+	HAL_GPIO_WritePin(Port, Pin, state);
+}
+```
+
+7_segment.c
 ```c
 static GPIO_TypeDef * segmentPort[NUMBER_OF_SEGMENT] =
 {
@@ -173,32 +208,6 @@ led_modify.c
 // same as the source code in exercise 2, separated by header and source file from main
 ```
 
-software_timer.h
-```c
-#define TIMER_DELAY   1000
-#define TIMER_INTERRUPT   10
-```
-
-software_timer.c
-```c
-int timerCounter = 0;
-int timerFlag = 0;
-
-void Set_Timer(void){
-	timerCounter = TIMER_DELAY/TIMER_INTERRUPT;
-	timerFlag 	 = 0;
-}
-
-void Timer_Run(void){
-	if(timerCounter > 0){
-		timerCounter--;
-		if(timerCounter <= 0){
-			timerFlag = 1;
-		}
-	}
-}
-```
-
 main.c
 
 ```c
@@ -224,13 +233,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	Timer_Run();
 }
 ```
-
+Full source code can be found [here](./src/ex4/Core)
 
 ### Exercise 6 to Exercise 10
 ***Schematic*** 
 
 ![Image](./images/lab1_ex6/lab1_ex6-1.png "Exercise 1 schematic")
 ***Source code***
+
 gpio.c
 ```c
 static uint16_t clockPin[ANALOG_CLOCK_NUMBER] =
@@ -364,4 +374,8 @@ main.c
   }
   /* USER CODE END 3 */
 }
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	Timer_Run();
+}
 ```
+Full source code can be found [here](./src/ex6/Core)
