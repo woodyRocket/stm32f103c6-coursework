@@ -1,0 +1,5 @@
+../Core/Src/gpio.c:67:6:MX_GPIO_Init	32	static
+../Core/Src/gpio.c:108:6:Turn_On_Led	16	static
+../Core/Src/gpio.c:112:6:Turn_Off_Led	16	static
+../Core/Src/gpio.c:116:6:State_Display	16	static
+../Core/Src/gpio.c:120:6:Clock_Display	24	static

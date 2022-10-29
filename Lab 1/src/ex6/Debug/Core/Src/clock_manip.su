@@ -1,0 +1,6 @@
+../Core/Src/clock_manip.c:29:6:Check_Clock	16	static
+../Core/Src/clock_manip.c:39:6:Clear_All	16	static
+../Core/Src/clock_manip.c:45:6:Set_All	16	static
+../Core/Src/clock_manip.c:51:6:Set_Number	16	static
+../Core/Src/clock_manip.c:57:6:Clear_Number	16	static
+../Core/Src/clock_manip.c:62:6:Display_Time	16	static

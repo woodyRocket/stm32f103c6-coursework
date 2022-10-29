@@ -1,0 +1,2 @@
+../Core/Src/led_modify.c:20:6:LED_Setup	24	static
+../Core/Src/led_modify.c:26:6:LED_Alternating	8	static

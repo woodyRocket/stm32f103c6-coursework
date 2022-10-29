@@ -1,0 +1,8 @@
+../Core/Src/gpio.c:36:6:MX_GPIO_Init	32	static
+../Core/Src/gpio.c:71:6:Turn_On_Red	8	static
+../Core/Src/gpio.c:75:6:Turn_Off_Red	8	static
+../Core/Src/gpio.c:79:6:Turn_On_Yellow	8	static
+../Core/Src/gpio.c:83:6:Turn_Off_Yellow	8	static
+../Core/Src/gpio.c:87:6:Turn_On_Green	8	static
+../Core/Src/gpio.c:90:6:Turn_Off_Green	8	static
+../Core/Src/gpio.c:93:6:Data_Out	16	static

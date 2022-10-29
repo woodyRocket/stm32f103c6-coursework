@@ -1,0 +1,3 @@
+../Core/Src/7_segment.c:36:6:Display_Number	24	static
+../Core/Src/7_segment.c:42:6:Seg_Setup	16	static
+../Core/Src/7_segment.c:48:6:Display_7Seg	8	static
