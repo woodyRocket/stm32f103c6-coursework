@@ -1,6 +1,6 @@
 # README
 
-Lab 1 contains 10 exercises. Please see the Lab 1 Report.md for more details 
+Lab 1 contains 10 exercises. Please see the Lab1_report.md for more details 
 
 Source code in src folder
 
