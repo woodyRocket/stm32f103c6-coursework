@@ -1,0 +1,3 @@
+../Core/Src/software_timer.c:16:6:Software_Timer_Init	8	static
+../Core/Src/software_timer.c:38:6:STIM_Set_Timer	16	static
+../Core/Src/software_timer.c:43:6:STIM_Timer_Run	16	static

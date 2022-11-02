@@ -1,0 +1,3 @@
+../Core/Src/led_modify.c:25:6:Turn_On_Led	16	static
+../Core/Src/led_modify.c:29:6:Turn_Off_Led	16	static
+../Core/Src/led_modify.c:33:6:Display_LED_Buffer	16	static

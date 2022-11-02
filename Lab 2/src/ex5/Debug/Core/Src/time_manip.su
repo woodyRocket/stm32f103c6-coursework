@@ -1,0 +1,3 @@
+../Core/Src/time_manip.c:15:6:Time_Input	16	static
+../Core/Src/time_manip.c:26:6:Clock_Counter	8	static
+../Core/Src/time_manip.c:42:6:Update_Clock_Buffer	4	static

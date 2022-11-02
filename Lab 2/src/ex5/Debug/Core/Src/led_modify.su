@@ -1,0 +1,2 @@
+../Core/Src/led_modify.c:35:6:Display_LED_Buffer	16	static
+../Core/Src/led_modify.c:40:6:Display_Dot_Buffer	16	static
