@@ -36,6 +36,4 @@ void Sub_Road(uint16_t mainRed, uint16_t mainYellow, uint16_t mainGreen);
 void Main_Road(uint16_t subRed, uint16_t subYellow, uint16_t subGreen);
 void Intersection_Init(void);
 void Intersection_Normal_Mode(void);
-void Vertical_Normal_Mode(void);
-void Horizontal_Normal_Mode(void);
 #endif /* INC_TRAFFIC_MANIP_H_ */

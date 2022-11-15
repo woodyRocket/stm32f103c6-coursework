@@ -44,6 +44,8 @@ void Mode_Processing(void){
 				  hClock->Down(hClock);
 			}
 			Intersection_Normal_Mode();
+//			vTrafficLight->Normal_Run(vTrafficLight, vClock, V_RED_TIME, V_YELLOW_TIME, V_GREEN_TIME);
+//			hTrafficLight->Normal_Run(hTrafficLight, hClock, H_RED_TIME, H_YELLOW_TIME, H_GREEN_TIME);
 			break;
 		case RED_MOD:
 			if (stim2->flag == 1){
@@ -54,10 +56,7 @@ void Mode_Processing(void){
 
 			hClock->Modify(hClock, 0, 0, RED_MOD);
 			vClock->Modify(vClock, 0, 0, LightTime_Modify(&newRedTime));
-			if (stim3->flag == 1){
-				stim3->Set_Default(stim3);
-				Intersection_7SEG_Display();
-			}
+
 			if (buttonSet->flag == 1){
 				buttonSet->flag = 0;
 				H_RED_TIME = newRedTime*1000;
@@ -72,10 +71,7 @@ void Mode_Processing(void){
 
 			hClock->Modify(hClock, 0, 0, YELLOW_MOD);
 			vClock->Modify(vClock, 0, 0, LightTime_Modify(&newYellowTime));
-			if (stim3->flag == 1){
-				stim3->Set_Default(stim3);
-				Intersection_7SEG_Display();
-			}
+
 			if (buttonSet->flag == 1){
 				buttonSet->flag = 0;
 				H_YELLOW_TIME = newYellowTime*1000;
@@ -90,10 +86,7 @@ void Mode_Processing(void){
 
 			hClock->Modify(hClock, 0, 0, GREEN_MOD);
 			vClock->Modify(vClock, 0, 0, LightTime_Modify(&newGreenTime));
-			if (stim3->flag == 1){
-				stim3->Set_Default(stim3);
-				Intersection_7SEG_Display();
-			}
+
 			if (buttonSet->flag == 1){
 				buttonSet->flag = 0;
 				H_GREEN_TIME = newGreenTime*1000;
@@ -120,16 +113,5 @@ void Mode_Processing(void){
 	}
 }
 
-void Set_Processing(void){
-	if (buttonSet->flag == 1){
-		buttonSet->flag = 0;
-
-		H_RED_TIME = newRedTime;
-		Sub_Road(H_RED_TIME, H_YELLOW_TIME, H_GREEN_TIME);
-
-		vClock->Modify(vClock, 0, 0, V_GREEN_TIME/1000);
-		hClock->Modify(hClock, 0, 0, H_RED_TIME/1000);
-	}
-}
 
 

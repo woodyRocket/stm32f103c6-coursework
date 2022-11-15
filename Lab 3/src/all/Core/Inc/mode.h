@@ -26,5 +26,4 @@ void ModeButton_Pressed(void);
 void Mode_Processing(void);
 
 
-
 #endif /* INC_MODE_H_ */

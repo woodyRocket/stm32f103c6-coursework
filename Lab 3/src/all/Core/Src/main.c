@@ -54,7 +54,7 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+void Display_7SEG(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -99,8 +99,6 @@ int main(void)
   Intersection_7SEG_Init();
   Traffic_Button_Init();
 
-  hTrafficLight->stim->Set_Manual(hTrafficLight->stim, H_RED_TIME);
-  vTrafficLight->stim->Set_Manual(vTrafficLight->stim, V_GREEN_TIME);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -109,7 +107,7 @@ int main(void)
   {
 //	  Intersection_Normal_Mode();
 	  Mode_Processing();
-
+	  Display_7SEG();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -154,6 +152,13 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void Display_7SEG(void){
+	if (stim3->flag == 1){
+		 stim3->Set_Default(stim3);
+		 Intersection_7SEG_Display();
+	}
+}
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if (htim->Instance == TIM2){
 		hTrafficLight->stim->Timer_Run(hTrafficLight->stim);

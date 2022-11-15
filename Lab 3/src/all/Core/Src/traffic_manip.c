@@ -70,64 +70,8 @@ void Intersection_Init(void){
 	hClock = Clock_Init(0, 0, H_RED_TIME/1000);
 }
 
-void Vertical_Normal_Mode(void){
-	vTrafficLight->Normal_Run(vTrafficLight, vClock, V_RED_TIME, V_YELLOW_TIME, V_GREEN_TIME);
-	switch (vTrafficLight->state){
-		case INIT:
-			break;
-		case AUTO_RED:
-			if (stim3->flag == 1){
-				stim3->Set_Default(stim3);
-				Intersection_7SEG_Display();
-			}
-			break;
-		case AUTO_YELLOW:
-			if (stim3->flag == 1){
-				stim3->Set_Default(stim3);
-				Intersection_7SEG_Display();
-			}
-			break;
-		case AUTO_GREEN:
-			if (stim3->flag == 1){
-				stim3->Set_Default(stim3);
-				Intersection_7SEG_Display();
-			}
-			break;
-		default:
-			break;
-		}
-}
-void Horizontal_Normal_Mode(void){
-	hTrafficLight->Normal_Run(hTrafficLight, hClock, H_RED_TIME, H_YELLOW_TIME, H_GREEN_TIME);
-	switch (hTrafficLight->state){
-		case INIT:
-			break;
-		case AUTO_RED:
-			if (stim3->flag == 1){
-				stim3->Set_Default(stim3);
-				Intersection_7SEG_Display();
-			}
-			break;
-		case AUTO_YELLOW:
-			if (stim3->flag == 1){
-				stim3->Set_Default(stim3);
-				Intersection_7SEG_Display();
-			}
-			break;
-		case AUTO_GREEN:
-			if (stim3->flag == 1){
-				stim3->Set_Default(stim3);
-				Intersection_7SEG_Display();
-			}
-			break;
-		case EXIT:
-			break;
-		default:
-			break;
-	}
-}
 
 void Intersection_Normal_Mode(void){
-	Vertical_Normal_Mode();
-	Horizontal_Normal_Mode();
+	vTrafficLight->Normal_Run(vTrafficLight, vClock, V_RED_TIME, V_YELLOW_TIME, V_GREEN_TIME);
+	hTrafficLight->Normal_Run(hTrafficLight, hClock, H_RED_TIME, H_YELLOW_TIME, H_GREEN_TIME);
 }

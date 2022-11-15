@@ -17,4 +17,5 @@ void Intersection_7SEG_Init(void);
 void Segment_To_Buffer(void);
 void Intersection_7SEG_Display(void);
 
+
 #endif /* INC_7SEG_MANIP_H_ */
