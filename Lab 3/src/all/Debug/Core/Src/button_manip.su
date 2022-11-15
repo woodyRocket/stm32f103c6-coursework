@@ -1,0 +1,2 @@
+../Core/Src/button_manip.c:27:6:Traffic_Button_Init	8	static
+../Core/Src/button_manip.c:33:6:Button_Scan	8	static

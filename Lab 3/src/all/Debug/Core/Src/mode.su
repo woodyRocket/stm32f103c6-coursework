@@ -1,0 +1,5 @@
+../Core/Src/mode.c:12:6:ModeButton_Pressed	4	static
+../Core/Src/mode.c:23:6:Delay_Flush	4	static
+../Core/Src/mode.c:29:10:LightTime_Modify	16	static
+../Core/Src/mode.c:37:6:Mode_Processing	16	static
+../Core/Src/mode.c:123:6:Set_Processing	16	static
